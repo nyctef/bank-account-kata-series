@@ -52,5 +52,16 @@ namespace BankingKataTests
 
             printer.Verify(x => x.PrintMoney(new Money(50)));
         }
+
+        [Test]
+        public void AccountThrowsExceptionIfNotEnoughMoneyToWithdraw()
+        {
+            var account = new Account();
+            account.Deposit(new Money(100));
+            Assert.Throws<NotEnoughMoneyException>(() =>
+            {
+                account.Withdraw(new Money(150));
+            });
+        }
     }
 }

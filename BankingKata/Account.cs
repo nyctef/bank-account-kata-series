@@ -27,7 +27,12 @@ namespace BankingKata
 
         public void Withdraw(Money money)
         {
-            balance = balance.Minus(money);
+            if (balance.GreaterOrEqual(money))
+            {
+                balance = balance.Minus(money);
+                return;
+            }
+            throw new NotEnoughMoneyException();
         }
     }
 }

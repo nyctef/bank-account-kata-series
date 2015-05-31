@@ -26,6 +26,11 @@ namespace BankingKata
             return new Money(amount + money.amount);
         }
 
+        internal bool GreaterOrEqual(Money money)
+        {
+            return amount >= money.amount;
+        }
+
         internal Money Minus(Money money)
         {
             return new Money(amount - money.amount);
