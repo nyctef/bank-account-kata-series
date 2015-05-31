@@ -12,17 +12,17 @@ namespace BankingKata
 
         public Account()
         {
-            this.balance = new Money(0);
+            balance = new Money(0);
         }
 
         public void Deposit(Money money)
         {
-            this.balance = this.balance.Plus(money);
+            balance = balance.Plus(money);
         }
 
         public void PrintBalance(IPrinter printer)
         {
-            printer.PrintMoney(this.balance);
+            printer.PrintMoney(balance);
         }
     }
 }

@@ -23,7 +23,7 @@ namespace BankingKata
 
         internal Money Plus(Money money)
         {
-            return new Money(this.amount + money.amount);
+            return new Money(amount + money.amount);
         }
     }
 }
