@@ -21,19 +21,32 @@ namespace BankingKata
             return this.amount == otherAmount;
         }
 
-        internal Money Plus(Money money)
+        public static Money operator+(Money left, Money right)
         {
-            return new Money(amount + money.amount);
+            var leftAmount = left.amount;
+            var rightAmount = right.amount;
+            return new Money(leftAmount + rightAmount);
         }
 
-        internal bool GreaterOrEqual(Money money)
+        public static Money operator-(Money left, Money right)
         {
-            return amount >= money.amount;
+            var leftAmount = left.amount;
+            var rightAmount = right.amount;
+            return new Money(leftAmount - rightAmount);
         }
 
-        internal Money Minus(Money money)
+        public static bool operator>=(Money left, Money right)
         {
-            return new Money(amount - money.amount);
+            var leftAmount = left.amount;
+            var rightAmount = right.amount;
+            return leftAmount >= rightAmount;
+        }
+
+        public static bool operator <=(Money left, Money right)
+        {
+            var leftAmount = left.amount;
+            var rightAmount = right.amount;
+            return leftAmount <= rightAmount;
         }
     }
 }

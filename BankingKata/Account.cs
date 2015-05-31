@@ -17,7 +17,7 @@ namespace BankingKata
 
         public void Deposit(Money money)
         {
-            balance = balance.Plus(money);
+            balance = balance + money;
         }
 
         public void PrintBalance(IPrinter printer)
@@ -27,9 +27,9 @@ namespace BankingKata
 
         public void Withdraw(Money money)
         {
-            if (balance.GreaterOrEqual(money))
+            if (balance >= money)
             {
-                balance = balance.Minus(money);
+                balance = balance - money;
                 return;
             }
             throw new NotEnoughMoneyException();
