@@ -37,5 +37,20 @@ namespace BankingKataTests
 
             printer.Verify(x => x.PrintMoney(new Money(200)));
         }
+
+        [Test]
+        public void CanWithdrawFromAccount()
+        {
+            var account = new Account();
+            account.Deposit(new Money(100));
+            account.Deposit(new Money(100));
+            account.Withdraw(new Money(150));
+            var printer = new Mock<IPrinter>();
+            var mockPrinter = printer.Object;
+
+            account.PrintBalance(mockPrinter);
+
+            printer.Verify(x => x.PrintMoney(new Money(50)));
+        }
     }
 }

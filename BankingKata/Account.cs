@@ -24,5 +24,10 @@ namespace BankingKata
         {
             printer.PrintMoney(balance);
         }
+
+        public void Withdraw(Money money)
+        {
+            balance = balance.Minus(money);
+        }
     }
 }

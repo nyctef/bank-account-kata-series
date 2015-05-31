@@ -25,5 +25,10 @@ namespace BankingKata
         {
             return new Money(amount + money.amount);
         }
+
+        internal Money Minus(Money money)
+        {
+            return new Money(amount - money.amount);
+        }
     }
 }
