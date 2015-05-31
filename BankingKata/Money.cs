@@ -21,6 +21,11 @@ namespace BankingKata
             return this.amount == otherAmount;
         }
 
+        public override int GetHashCode()
+        {
+            return amount.GetHashCode();
+        }
+
         public static Money operator+(Money left, Money right)
         {
             var leftAmount = left.amount;
