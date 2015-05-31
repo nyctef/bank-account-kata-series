@@ -20,5 +20,10 @@ namespace BankingKata
             var otherAmount = ((Money)other).amount;
             return this.amount == otherAmount;
         }
+
+        internal Money Plus(Money money)
+        {
+            return new Money(this.amount + money.amount);
+        }
     }
 }

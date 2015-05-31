@@ -17,7 +17,7 @@ namespace BankingKata
 
         public void Deposit(Money money)
         {
-            this.balance = money;
+            this.balance = this.balance.Plus(money);
         }
 
         public void PrintBalance(IPrinter printer)
